@@ -1,0 +1,49 @@
+{
+  "name": "masking-gateway",
+  "version": "0.1.0",
+  "description": "Reversible masking of personal data and secrets in requests to large language model providers.",
+  "license": "Apache-2.0",
+  "author": "Souc ai Artificial Intelligence Developing Services EST. (https://souc.ai)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharkhk/masking-gateway.git"
+  },
+  "homepage": "https://github.com/sharkhk/masking-gateway#readme",
+  "bugs": {
+    "url": "https://github.com/sharkhk/masking-gateway/issues"
+  },
+  "keywords": [
+    "llm",
+    "privacy",
+    "pii",
+    "masking",
+    "redaction",
+    "openai",
+    "anthropic",
+    "emirates-id",
+    "arabic"
+  ],
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.cjs.json && node -e \"require('fs').writeFileSync('dist/cjs/package.json', JSON.stringify({type:'commonjs'}))\"",
+    "test": "vitest run",
+    "eval": "vitest run test/eval.test.ts",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0",
+    "@types/node": "^22.0.0"
+  }
+}
